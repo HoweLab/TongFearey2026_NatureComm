@@ -8,37 +8,37 @@
 clear; close all
 
 %% ===================== Inputs: edit here =====================
-dataRoot = 'E:\';   % where you save the processed files
+dataRoot = 'E:\Tong2026';   % where you save the processed files
 
 % Output: figures go to <outDir>\<figure name>\, stats to one workbook
 cfg.outDir    = fullfile(pwd, 'output');
 cfg.statsFile = fullfile(cfg.outDir, 'PaperStats_report.xlsx');
 
 % Linear track, 1 world, and spontaneous locomotion (GUI) - Fig 1-2, Sup 2-5
-cfg.track1w = fullfile(dataRoot, 'processedData_2025final', 'processedData_convolv', 'processedDataTrack_all.mat');
-cfg.gui     = fullfile(dataRoot, 'processedData_2025final', 'processedData_convolv', 'processedData_gui.mat');
+cfg.track1w = fullfile(dataRoot, 'population_concat_data', 'deconvolve', 'processedDataTrack_all.mat');
+cfg.gui     = fullfile(dataRoot, 'population_concat_data', 'deconvolve', 'processedData_gui.mat');
 % speed-tuning correlations - Fig 1G, Sup 2
-cfg.speedTuning1w  = fullfile(dataRoot, 'Vel_Encoding_SX', 'SpeedTuning_1w.mat');
-cfg.speedTuningGui = fullfile(dataRoot, 'Vel_Encoding_SX', 'SpeedTuning_GUI.mat');
+cfg.speedTuning1w  = fullfile(dataRoot, 'DI_Vel_Correlation', 'SpeedTuning_1w.mat');
+cfg.speedTuningGui = fullfile(dataRoot, 'DI_Vel_Correlation', 'SpeedTuning_GUI.mat');
 % summary ROI folders (cells per cohort) - Sup 3I
 cfg.roiTrack = fullfile(dataRoot, 'SummaryROI', 'linearTrackRecording_24to25_1w_deconv');
 cfg.roiGui   = fullfile(dataRoot, 'SummaryROI', 'linearTrackRecording_24to25_gui_deconv');
 % percent active cells - Sup 4I-P
-cfg.prctActive1w  = fullfile(dataRoot, 'processedData_2025final', 'processedData_prctActive', 'processedData_1w.mat');
-cfg.prctActiveGui = fullfile(dataRoot, 'processedData_2025final', 'processedData_prctActive', 'processedData_gui.mat');
+cfg.prctActive1w  = fullfile(dataRoot, 'population_concat_data', 'prctActive', 'processedData_1w_prct.mat');
+cfg.prctActiveGui = fullfile(dataRoot, 'population_concat_data', 'prctActive', 'processedData_gui_prct.mat');
 
-% Two tracks: tuning subtypes and single-cell data - Fig 3, Sup 6-7
-cfg.tuned2w    = fullfile(dataRoot, 'processedData_2025test', 'tuningSubType_2026_2w.mat');
-cfg.sc2w       = fullfile(dataRoot, 'dataOrganizedByCell', 'bf2w_2025.mat');
-cfg.switchInfo = fullfile(dataRoot, 'notes', 'NovFam_Switch_Info.xlsx');   % also Fig 4, Sup 8
+% Two tracks: tuning subtypes subpopulation plots and single-cell data - Fig 3, Sup 6-7
+cfg.tuned2w    = fullfile(dataRoot, 'tuned_subpop_concat_data', 'tuningSubType_2026_2w.mat');
+cfg.sc2w       = fullfile(dataRoot, 'dataOrganizedByCell', 'twotrack_2025.mat');
+cfg.switchInfo = fullfile(dataRoot, 'NovFam_Switch_Info.xlsx');   % also Fig 4, Sup 8
 
 % Novel vs. familiar track (all sessions) - Fig 4, Sup 8
-cfg.trackNovFam = fullfile(dataRoot, 'processedData_2025final', 'processedDataTrack_all.mat');
+cfg.trackNovFam = fullfile(dataRoot, 'population_concat_data', 'processedDataTrack_all.mat');
 
 % Infinite track: population, tuning subtypes, single-cell - Fig 5, Sup 9
-cfg.infPop   = fullfile(dataRoot, 'processedData_2025final', 'processedData_all.mat');
-cfg.infTuned = fullfile(dataRoot, 'processedData_2025test', 'tuningSubType_2025_inf_newtype.mat');
-cfg.infSc    = fullfile(dataRoot, 'dataOrganizedByCell', 'bfinf_DistTuned_2025.mat');
+cfg.infPop   = fullfile(dataRoot, 'population_concat_data', 'processedData_all.mat');
+cfg.infTuned = fullfile(dataRoot, 'tuned_subpop_concat_data', 'tuningSubType_2025_inf_newtype.mat');
+cfg.infSc    = fullfile(dataRoot, 'dataOrganizedByCell', 'inf_DistTuned_2025.mat');
 
 % Figures to generate (remove entries to run a subset)
 figsToRun = {'Figure1', 'Figure2', 'Figure3', 'Figure4', 'Figure5', ...
