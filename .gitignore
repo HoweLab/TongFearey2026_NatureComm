@@ -4,6 +4,7 @@
 *.autosave
 
 # data and generated outputs
+output/
 *.mat
 *.fig
 *.xlsx
