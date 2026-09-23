@@ -1,8 +1,8 @@
-# DynamicImbalance
+# Dynamic imbalances in cell-type-specific striatal ensembles reflect learned coupling between trajectory representations and locomotor dynamics
+doi: https://doi.org/10.1101/2024.10.29.620847
 
 MATLAB code that generates the figure panels and the statistics / source-data
-workbook for the paper's main Figures 1–5 and Extended Data Figures 2–9
-(dSPN / iSPN activity imbalance during locomotion).
+workbook for the paper's main Figures 1-6 and Extended Data Figures 2–9
 
 ## Requirements
 
@@ -50,6 +50,3 @@ input exists, starts a thread-based parallel pool and runs each figure in turn.
 | `tuned2w`, `sc2w`, `switchInfo` | Fig 3, Sup 6–7 | Two-track tuning subtypes, single-cell data, session switch sheet |
 | `trackNovFam` | Fig 4, Sup 8 | All linear-track sessions for novel vs. familiar |
 | `infPop`, `infTuned`, `infSc` | Fig 5, Sup 9 | Infinite track: population, tuning subtypes, single-cell data |
-
-Panels showing schematics or single-cell / single-session examples are not
-generated here.
