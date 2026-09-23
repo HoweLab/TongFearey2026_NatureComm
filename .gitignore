@@ -1,0 +1,18 @@
+# MATLAB autosave / editor backups
+*.asv
+*.m~
+*.autosave
+
+# data and generated outputs
+*.mat
+*.fig
+*.xlsx
+*.png
+*.pdf
+*.svg
+*.eps
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
